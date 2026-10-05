@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24a02f0d58baaa469f5c453e47bf1bc, type: 3}
+  m_Name: UITheme
+  m_EditorClassIdentifier: Assembly-CSharp::StealthGame.UITheme
+  panelSettings: {fileID: 11400000, guid: 283caf3134408b84b9820df43b8798cb, type: 2}
+  titleFont: {fileID: 12800000, guid: 915b03c09fe744ec4996cac4a8543281, type: 3}
+  bodyFont: {fileID: 0}
+  heart: {fileID: 2800000, guid: 6ccf96632c4fa2b45afcbaece6810a42, type: 3}
+  stamina: {fileID: 2800000, guid: fe4d6cf269a08204a84c842a14cca751, type: 3}
+  lantern: {fileID: 2800000, guid: 666959354d006104ca3ad7ac09c51f13, type: 3}
+  shard: {fileID: 2800000, guid: 02d49b51de04c074f8442432c3181651, type: 3}
+  potion: {fileID: 2800000, guid: 9988e8496e7490d4984ff84df253260a, type: 3}
+  relic: {fileID: 2800000, guid: fb9d3a5678b67604f89c774c053a1df4, type: 3}
+  key: {fileID: 2800000, guid: d009afb29e096c44e8f5c1db89ac147f, type: 3}
+  ghost: {fileID: 2800000, guid: f594ecd6b62b5d14ca3e3c1896bdd7c0, type: 3}
+  clock: {fileID: 2800000, guid: 39013d28e9b119149befd1212a134027, type: 3}
+  skull: {fileID: 2800000, guid: cbe83c3f89af3e24c9c044635691a745, type: 3}
+  eye: {fileID: 2800000, guid: 9425beafb3066414b92da4b1abaf70ca, type: 3}
+  quest: {fileID: 2800000, guid: e10c18cf4391ea345bb773b1c2e68e2f, type: 3}
+  checkpoint: {fileID: 2800000, guid: 2f14c1fc2f3714c429a71f35ca571881, type: 3}
+  trophy: {fileID: 2800000, guid: 5dac7069f8e01cd42ba154a2ceb19ebb, type: 3}
+  energy: {fileID: 2800000, guid: a9a440de97daff24e8676cc37c9302e8, type: 3}
+  wonScreen: {fileID: 2800000, guid: 3db33661dbbdaaa49ba54408899d20cb, type: 3}
+  caughtScreen: {fileID: 2800000, guid: 2942309166a418a4c8ac2d569a8b14b9, type: 3}
+  vignette: {fileID: 2800000, guid: 1117851b4a1057540a00c5dc8dde64df, type: 3}
+  gold: {r: 0.88, g: 0.69, b: 0.31, a: 1}
+  panel: {r: 0.05, g: 0.05, b: 0.09, a: 0.92}
+  danger: {r: 0.89, g: 0.33, b: 0.28, a: 1}
+  health: {r: 0.85, g: 0.22, b: 0.25, a: 1}
+  staminaColor: {r: 0.45, g: 0.82, b: 0.5, a: 1}
+  energyColor: {r: 0.98, g: 0.82, b: 0.35, a: 1}
+  text: {r: 0.95, g: 0.95, b: 0.95, a: 1}
+  muted: {r: 0.66, g: 0.69, b: 0.78, a: 1}

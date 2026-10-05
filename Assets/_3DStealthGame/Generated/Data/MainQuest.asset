@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90ac9efa72ad2fb4188a7f9e981ef340, type: 3}
+  m_Name: MainQuest
+  m_EditorClassIdentifier: Assembly-CSharp::StealthGame.QuestDefinition
+  title: "Tho\xE1t kh\u1ECFi dinh th\u1EF1 ma \xE1m"
+  story: "\u0110\xEAm \u1EA5y, John Lemon t\u1EC9nh d\u1EADy trong m\u1ED9t dinh th\u1EF1 c\u1ED5 b\u1ECB nguy\u1EC1n r\u1EE7a. Dinh th\u1EF1 ch\u1EC9 t\u1ED3n t\u1EA1i trong b\xF3ng \u0111\xEAm \u2013 khi b\xECnh minh l\xF3 d\u1EA1ng n\xF3 s\u1EBD tan bi\u1EBFn c\xF9ng m\u1ECDi linh h\u1ED3n c\xF2n m\u1EAFc k\u1EB9t b\xEAn trong.\n\nC\u1EEDa ch\xEDnh b\u1ECB phong \u1EA5n b\u1EDFi ba M\u1EA3nh h\u1ED3n. L\u0169 ma tu\u1EA7n tra kh\u1EAFp c\xE1c h\xE0nh lang, t\u01B0\u1EE3ng Gargoyle canh g\xE1c m\u1ECDi l\u1ED1i \u0111i, v\xE0 m\u1ED9t Oan h\u1ED3n \u0111\xE1ng s\u1EE3 tr\xFA ng\u1EE5 trong ph\xF2ng \u0103n. V\u1EDBi chi\u1EBFc \u0111\xE8n l\u1ED3ng linh h\u1ED3n trong tay, John ph\u1EA3i l\xE9n l\xFAt thu th\u1EADp \u0111\u1EE7 ba m\u1EA3nh v\xE0 tho\xE1t ra tr\u01B0\u1EDBc 6 gi\u1EDD s\xE1ng."
+  objectives:
+  - id: talk_ivan
+    text: "N\xF3i chuy\u1EC7n v\u1EDBi Ivan trong ph\xF2ng ng\u1EE7"
+    type: 0
+    key: ivan_met
+    target: 1
+    optional: 0
+    requires: 
+    hint: "Ivan \u0111\u1EE9ng ngay c\u1EA1nh b\u1EA1n l\xFAc b\u1EAFt \u0111\u1EA7u. Nh\u1EA5n E \u0111\u1EC3 n\xF3i chuy\u1EC7n."
+  - id: relics
+    text: "Thu th\u1EADp M\u1EA3nh h\u1ED3n ({0}/{1})"
+    type: 1
+    key: 
+    target: 3
+    optional: 0
+    requires: talk_ivan
+    hint: "B\u1EBFp (g\u1EA7n ph\xF2ng ng\u1EE7) \u2022 Th\u01B0 ph\xF2ng ph\xEDa B\u1EAFc (Phong \u1EA5n \u0110\u1ECF) \u2022 Ph\xF2ng \u0103n \xF4 c\u1EDD (Phong \u1EA5n Xanh, c\xF3 Oan h\u1ED3n)."
+  - id: key_red
+    text: "T\xECm ch\xECa kh\xF3a \u0111\u1ECF \u1EDF C\xE1nh T\xE2y"
+    type: 2
+    key: keyRed
+    target: 1
+    optional: 0
+    requires: talk_ivan
+    hint: "C\u0103n ph\xF2ng xanh cu\u1ED1i h\xE0nh lang ph\xEDa T\xE2y. C\u1EA9n th\u1EADn t\u01B0\u1EE3ng Gargoyle \u1EDF h\xE0nh lang."
+  - id: key_blue
+    text: "T\xECm ch\xECa kh\xF3a xanh \u1EDF ph\xF2ng \xF4 c\u1EDD gi\u1EEFa nh\xE0"
+    type: 2
+    key: keyBlue
+    target: 1
+    optional: 0
+    requires: talk_ivan
+    hint: "C\u0103n ph\xF2ng nh\u1ECF l\xE1t g\u1EA1ch \xF4 c\u1EDD \u1EDF gi\u1EEFa dinh th\u1EF1."
+  - id: gate
+    text: "Ph\xE1 phong \u1EA5n c\u1EEDa ch\xEDnh \u1EDF C\xE1nh \u0110\xF4ng"
+    type: 3
+    key: gate_main
+    target: 1
+    optional: 0
+    requires: relics
+    hint: "Cu\u1ED1i h\xE0nh lang ph\xEDa \u0110\xF4ng. Nh\u1EA5n E tr\u01B0\u1EDBc c\xE1nh c\u1ED5ng v\xE0ng."
+  - id: escape
+    text: "Tho\xE1t ra ngo\xE0i!"
+    type: 6
+    key: 
+    target: 1
+    optional: 0
+    requires: gate
+    hint: 
+  - id: banish
+    text: "Tr\u1EE5c xu\u1EA5t h\u1ED3n ma ({0}/{1})"
+    type: 4
+    key: 
+    target: 3
+    optional: 1
+    requires: talk_ivan
+    hint: "D\xF9ng Linh Quang (chu\u1ED9t tr\xE1i). \u0110\xE1nh t\u1EEB ph\xEDa sau g\xE2y s\xE1t th\u01B0\u01A1ng x2."
+  - id: shards
+    text: "Thu th\u1EADp m\u1EA3nh v\u1EE5n linh h\u1ED3n ({0}/{1})"
+    type: 5
+    key: 
+    target: 20
+    optional: 1
+    requires: talk_ivan
+    hint: "Nh\u1EEFng vi\xEAn pha l\xEA xanh nh\u1ECF kh\u1EAFp dinh th\u1EF1. \u0110\u1ED5i v\u1EDBi Ivan l\u1EA5y b\xECnh m\xE1u / d\u1EA7u \u0111\xE8n."

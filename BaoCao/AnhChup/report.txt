@@ -1,0 +1,60 @@
+Bắt đầu kiểm thử – 10/5/2026 3:54:31 PM
+PASS  Menu chính hiển thị
+screenshot 01_main_menu
+PASS  GameSession khởi tạo
+PASS  Có save checkpoint đầu
+PASS  Có kẻ địch trên NavMesh
+screenshot 02_game_start
+PASS  Điều khiển cảm ứng hiển thị
+PASS  Joystick ảo di chuyển nhân vật (0.69 m)
+PASS  Nút NGỒI cảm ứng
+screenshot 00_touch_controls
+screenshot 03_camera_1
+screenshot 03_camera_2
+screenshot 03_camera_3
+screenshot 03_camera_4
+PASS  Đi bộ (W) – di chuyển 0.96 m
+PASS  Chạy (Shift) tốn thể lực (100 → 78)
+PASS  Nhảy (Space) rời mặt đất
+PASS  Ngồi (C)
+screenshot 04_crouch
+PASS  Hội thoại bắt đầu (thời gian dừng)
+screenshot 05_dialogue
+screenshot 06_dialogue_menu
+PASS  Cờ ivan_met & nhiệm vụ mở
+PASS  Nhật ký mở – game dừng
+screenshot 07_journal
+PASS  Pause menu
+screenshot 08_pause
+PASS  Tiếp tục sau pause
+PASS  Nhặt Mảnh hồn Bình Minh
+screenshot 09_relic
+screenshot 10_combat_burst
+PASS  Linh Quang gây sát thương (100 → 20) và làm choáng
+PASS  Trục xuất hồn ma (trạng thái Dead)
+screenshot 11_banished
+PASS  Hồn ma phát hiện & truy đuổi
+screenshot 12_detected
+PASS  Checkpoint lưu tiến trình
+screenshot 13_checkpoint
+screenshot 14_low_health
+PASS  Màn hình Game Over
+screenshot 15_game_over
+PASS  Hồi sinh tại checkpoint giữ Mảnh hồn
+PASS  Vị trí hồi sinh gần cp_center
+screenshot 16_respawn
+PASS  Nhặt chìa khóa đỏ
+PASS  Nhặt chìa khóa xanh
+PASS  Phong ấn Đỏ: có thể tương tác
+PASS  Phong ấn Xanh: có thể tương tác
+screenshot 17_seal_open
+PASS  Đủ 3 Mảnh hồn
+screenshot 18_exit_gate
+PASS  Phong ấn cửa chính đã vỡ
+PASS  Màn hình chiến thắng
+PASS  Xếp hạng được tính (hạng B, 6083 điểm)
+screenshot 19_victory
+PASS  Quay về menu chính
+PASS  Kỷ lục được lưu
+screenshot 20_menu_after
+KẾT QUẢ: 34 PASS, 0 FAIL, 0 lỗi runtime

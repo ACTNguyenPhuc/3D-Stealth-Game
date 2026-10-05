@@ -1,0 +1,207 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2b623d4dce5b145ba14ea875d6d147, type: 3}
+  m_Name: Dialogue_Ivan
+  m_EditorClassIdentifier: Assembly-CSharp::StealthGame.DialogueTree
+  npcName: Ivan
+  entries:
+  - nodeId: welcome_back
+    conditions:
+    - type: 0
+      key: ivan_met
+      amount: 0
+  startNodeId: intro
+  nodes:
+  - id: intro
+    speaker: 
+    text: "Su\u1EF5t! Nh\u1ECF ti\u1EBFng th\xF4i... C\u1EADu c\u0169ng b\u1ECB l\u1EDDi nguy\u1EC1n k\xE9o v\xE0o dinh th\u1EF1 n\xE0y \xE0?"
+    onEnter:
+    - type: 0
+      key: ivan_met
+      value: 1
+      duration: 0
+    choices:
+    - text: "\xD4ng l\xE0 ai? \u0110\xE2y l\xE0 \u0111\xE2u?"
+      targetNodeId: who
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    - text: "L\xE0m sao \u0111\u1EC3 tho\xE1t ra?"
+      targetNodeId: quest
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    nextNodeId: 
+  - id: who
+    speaker: 
+    text: "T\xF4i l\xE0 Ivan, ng\u01B0\u1EDDi l\xE0m v\u01B0\u1EDDn. T\u1EEB khi l\u1EDDi nguy\u1EC1n gi\xE1ng xu\u1ED1ng, dinh th\u1EF1 ch\u1EC9 t\u1ED3n t\u1EA1i trong \u0111\xEAm. B\xECnh minh t\u1EDBi, n\xF3 tan bi\u1EBFn \u2013 c\xF9ng t\u1EA5t c\u1EA3 nh\u1EEFng ai c\xF2n k\u1EB9t b\xEAn trong."
+    onEnter: []
+    choices: []
+    nextNodeId: quest
+  - id: quest
+    speaker: 
+    text: "C\u1EEDa ch\xEDnh \u1EDF C\xE1nh \u0110\xF4ng b\u1ECB phong \u1EA5n b\u1EB1ng ba M\u1EA3nh h\u1ED3n. T\xECm \u0111\u1EE7 3 m\u1EA3nh, c\u1EADu s\u1EBD ph\xE1 \u0111\u01B0\u1EE3c phong \u1EA5n v\xE0 tho\xE1t ra tr\u01B0\u1EDBc 6 gi\u1EDD s\xE1ng."
+    onEnter: []
+    choices: []
+    nextNodeId: quest2
+  - id: quest2
+    speaker: 
+    text: "M\u1ED9t m\u1EA3nh \u1EDF trong b\u1EBFp, ngay g\u1EA7n \u0111\xE2y. M\u1EA3nh th\u1EE9 hai \u1EDF th\u01B0 ph\xF2ng ph\xEDa B\u1EAFc, b\u1ECB Phong \u1EA5n \u0110\u1ECF b\u1EA3o v\u1EC7. M\u1EA3nh cu\u1ED1i \u1EDF ph\xF2ng \u0103n \u2013 n\u01A1i m\u1ED9t Oan h\u1ED3n canh gi\u1EEF \u2013 b\u1ECB Phong \u1EA5n Xanh kh\xF3a l\u1EA1i."
+    onEnter:
+    - type: 0
+      key: quest_given
+      value: 1
+      duration: 0
+    choices: []
+    nextNodeId: menu
+  - id: welcome_back
+    speaker: 
+    text: "L\u1EA1i l\xE0 c\u1EADu \xE0? V\u1EABn c\xF2n s\u1ED1ng, t\u1ED1t l\u1EAFm."
+    onEnter: []
+    choices: []
+    nextNodeId: menu
+  - id: menu
+    speaker: 
+    text: "C\u1EADu c\u1EA7n g\xEC n\u1EEFa?"
+    onEnter: []
+    choices:
+    - text: "T\xF4i \u0111\xE3 c\xF3 \u0111\u1EE7 3 M\u1EA3nh h\u1ED3n!"
+      targetNodeId: all_relics
+      conditions:
+      - type: 7
+        key: 
+        amount: 3
+      - type: 1
+        key: ivan_blessing
+        amount: 0
+      showWhenLocked: 0
+      lockedHint: 
+      actions: []
+    - text: "Ch\xECa kh\xF3a \u1EDF \u0111\xE2u?"
+      targetNodeId: keys
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    - text: "L\xE0m sao \u0111\u1ED1i ph\xF3 v\u1EDBi l\u0169 ma?"
+      targetNodeId: tips
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    - text: "\u0110\u1ED5i 6 m\u1EA3nh v\u1EE5n l\u1EA5y 1 b\xECnh m\xE1u."
+      targetNodeId: buy_potion
+      conditions:
+      - type: 6
+        key: 
+        amount: 6
+      showWhenLocked: 1
+      lockedHint: "c\u1EA7n 6 m\u1EA3nh v\u1EE5n"
+      actions:
+      - type: 7
+        key: 
+        value: 6
+        duration: 0
+      - type: 8
+        key: 
+        value: 1
+        duration: 0
+    - text: "\u0110\u1ED5i 4 m\u1EA3nh v\u1EE5n l\u1EA5y d\u1EA7u \u0111\xE8n."
+      targetNodeId: buy_oil
+      conditions:
+      - type: 6
+        key: 
+        amount: 4
+      showWhenLocked: 1
+      lockedHint: "c\u1EA7n 4 m\u1EA3nh v\u1EE5n"
+      actions:
+      - type: 7
+        key: 
+        value: 4
+        duration: 0
+      - type: 10
+        key: 
+        value: 60
+        duration: 0
+    - text: "\xD4ng bi\u1EBFt g\xEC v\u1EC1 h\u1ED3n ma Whisper?"
+      targetNodeId: whisper_info
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    - text: "T\u1EA1m bi\u1EC7t."
+      targetNodeId: 
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    nextNodeId: 
+  - id: keys
+    speaker: 
+    text: "Ch\xECa kh\xF3a \u0111\u1ECF n\u1EB1m trong c\u0103n ph\xF2ng xanh \u1EDF C\xE1nh T\xE2y, nh\u01B0ng h\xE0nh lang c\xF3 t\u01B0\u1EE3ng Gargoyle canh. \u0110\u1EE3i n\xF3 quay \u0111i r\u1ED3i ng\u1ED3i xu\u1ED1ng m\xE0 l\u1EBBn qua. Ch\xECa kh\xF3a xanh \u1EDF c\u0103n ph\xF2ng \xF4 c\u1EDD nh\u1ECF gi\u1EEFa nh\xE0."
+    onEnter: []
+    choices: []
+    nextNodeId: menu
+  - id: tips
+    speaker: 
+    text: "Ma nh\xECn theo h\xECnh n\xF3n tr\u01B0\u1EDBc m\u1EB7t. Ng\u1ED3i xu\u1ED1ng th\xEC kh\xF3 b\u1ECB th\u1EA5y, ch\u1EA1y th\xEC ch\xFAng nghe ti\u1EBFng. N\u1EBFu b\u1ECB d\u1ED3n, chi\u1EBFu Linh Quang v\xE0o ch\xFAng \u2013 \u0111\xE1nh t\u1EEB ph\xEDa sau c\xE0ng \u0111au. Ng\u1ECDn n\u1EBFn xanh gi\xFAp c\u1EADu l\u01B0u l\u1EA1i ti\u1EBFn tr\xECnh."
+    onEnter: []
+    choices: []
+    nextNodeId: menu
+  - id: buy_potion
+    speaker: 
+    text: "\u0110\xE2y, c\u1EA7m l\u1EA5y. \u0110\u1EEBng ch\u1EBFt v\xF4 \xEDch."
+    onEnter: []
+    choices: []
+    nextNodeId: menu
+  - id: buy_oil
+    speaker: 
+    text: "D\u1EA7u \u0111\xE8n \u0111\xE2y. \xC1nh s\xE1ng l\xE0 th\u1EE9 duy nh\u1EA5t l\u0169 ma s\u1EE3."
+    onEnter: []
+    choices: []
+    nextNodeId: menu
+  - id: whisper_info
+    speaker: 
+    text: "Whisper l\xE0 h\u1ED3n ma hi\u1EC1n l\xE0nh \u1EDF s\u1EA3nh l\u1EDBn. N\xF3i v\u1EDBi n\xF3 r\u1EB1ng Ivan g\u1EEDi l\u1EDDi h\u1ECFi th\u0103m \u2013 c\xF3 th\u1EC3 n\xF3 s\u1EBD gi\xFAp c\u1EADu."
+    onEnter:
+    - type: 0
+      key: ivan_trust
+      value: 1
+      duration: 0
+    choices: []
+    nextNodeId: menu
+  - id: all_relics
+    speaker: 
+    text: "Tuy\u1EC7t v\u1EDDi! Ta ban ph\u01B0\u1EDBc cho c\u1EADu. Mau t\u1EDBi c\u1EEDa ch\xEDnh \u1EDF C\xE1nh \u0110\xF4ng \u2013 c\u1EA7u cho c\u1EADu may m\u1EAFn!"
+    onEnter:
+    - type: 9
+      key: 
+      value: 100
+      duration: 0
+    - type: 11
+      key: 
+      value: 500
+      duration: 0
+    - type: 0
+      key: ivan_blessing
+      value: 1
+      duration: 0
+    choices: []
+    nextNodeId: thanks
+  - id: thanks
+    speaker: '{player}'
+    text: "C\u1EA3m \u01A1n \xF4ng, Ivan. T\xF4i s\u1EBD quay l\u1EA1i c\u1EE9u \xF4ng."
+    onEnter: []
+    choices: []
+    nextNodeId: 

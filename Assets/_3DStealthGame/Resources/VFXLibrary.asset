@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b2b82987005eb49865687c34c42c80, type: 3}
+  m_Name: VFXLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::StealthGame.VFXLibrary
+  entries:
+  - id: 1
+    prefab: {fileID: 59025658248922897, guid: f8eba8ad0ab96d44a87dc17e4189669b, type: 3}
+    lifetime: 1.2
+  - id: 2
+    prefab: {fileID: 8143749908354166619, guid: 3554798cb6a726445bd4e61b7c9be7d8, type: 3}
+    lifetime: 0.9
+  - id: 3
+    prefab: {fileID: 5667132937186558043, guid: c743fc33abb03d04a93678d806bb00d0, type: 3}
+    lifetime: 0.8
+  - id: 4
+    prefab: {fileID: 421113255235579911, guid: 4ed55e00812ad1543a2fc5cbe8769aa9, type: 3}
+    lifetime: 2
+  - id: 5
+    prefab: {fileID: 4100412770795501161, guid: c482fc354dd53e345b6bda58d4750673, type: 3}
+    lifetime: 0.8
+  - id: 6
+    prefab: {fileID: 3112306132211371041, guid: c1bf02905fba3ba4c8e60a0b9f15d2b5, type: 3}
+    lifetime: 1.8
+  - id: 7
+    prefab: {fileID: 4982327767541032186, guid: 3be34e2c22b594d45b893f953a701e98, type: 3}
+    lifetime: 2
+  - id: 8
+    prefab: {fileID: 9143975442187056970, guid: db713033c019b454f883fda255e2edc4, type: 3}
+    lifetime: 1.8
+  - id: 9
+    prefab: {fileID: 4749351734176297313, guid: 183a2d78bdb81ab4c96e1a28c08c2c84, type: 3}
+    lifetime: 0.9
+  - id: 10
+    prefab: {fileID: 2907771175334241721, guid: 12a34ba60c23ae04189c738521ea00b3, type: 3}
+    lifetime: 1.4

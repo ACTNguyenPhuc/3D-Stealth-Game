@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2b623d4dce5b145ba14ea875d6d147, type: 3}
+  m_Name: Dialogue_Whisper
+  m_EditorClassIdentifier: Assembly-CSharp::StealthGame.DialogueTree
+  npcName: Whisper
+  entries:
+  - nodeId: after_help
+    conditions:
+    - type: 0
+      key: whisper_helped
+      amount: 0
+  startNodeId: intro
+  nodes:
+  - id: intro
+    speaker: 
+    text: "Ooooo... M\u1ED9t ng\u01B0\u1EDDi s\u1ED1ng... \u0111i l\u1EA1c v\xE0o \u0111\xE2y sao...?"
+    onEnter: []
+    choices:
+    - text: "\u0110\u1EEBng s\u1EE3, t\xF4i kh\xF4ng l\xE0m h\u1EA1i ai."
+      targetNodeId: calm
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    - text: "Ivan g\u1EEDi l\u1EDDi h\u1ECFi th\u0103m b\u1EA1n."
+      targetNodeId: ivan_friend
+      conditions:
+      - type: 0
+        key: ivan_trust
+        amount: 0
+      showWhenLocked: 1
+      lockedHint: "H\xE3y h\u1ECFi Ivan v\u1EC1 Whisper tr\u01B0\u1EDBc"
+      actions: []
+    - text: "B\xD9! Ma g\xEC m\xE0 nh\xE1t th\u1EBF!"
+      targetNodeId: angry
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    - text: "(L\u1EB7ng l\u1EBD r\u1EDDi \u0111i)"
+      targetNodeId: 
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    nextNodeId: 
+  - id: calm
+    speaker: 
+    text: "Ta kh\xF4ng s\u1EE3... ta ch\u1EC9 c\xF4 \u0111\u01A1n. Nh\u1EEFng h\u1ED3n ma kh\xE1c kh\xF4ng hi\u1EC1n nh\u01B0 ta \u0111\xE2u."
+    onEnter: []
+    choices: []
+    nextNodeId: calm_menu
+  - id: calm_menu
+    speaker: 
+    text: "Ng\u01B0\u01A1i mu\u1ED1n g\xEC \u1EDF ta?"
+    onEnter: []
+    choices:
+    - text: "B\u1EA1n c\xF3 th\u1EC3 gi\xFAp t\xF4i kh\xF4ng?"
+      targetNodeId: help_refuse
+      conditions:
+      - type: 1
+        key: ivan_trust
+        amount: 0
+      showWhenLocked: 0
+      lockedHint: 
+      actions: []
+    - text: "Ivan g\u1EEDi l\u1EDDi h\u1ECFi th\u0103m b\u1EA1n."
+      targetNodeId: ivan_friend
+      conditions:
+      - type: 0
+        key: ivan_trust
+        amount: 0
+      showWhenLocked: 1
+      lockedHint: "H\xE3y h\u1ECFi Ivan v\u1EC1 Whisper tr\u01B0\u1EDBc"
+      actions: []
+    - text: "M\u1EA3nh h\u1ED3n trong b\u1EBFp c\xF3 ai canh kh\xF4ng?"
+      targetNodeId: kitchen_hint
+      conditions:
+      - type: 5
+        key: kitchen_hint
+        amount: 0
+      showWhenLocked: 0
+      lockedHint: 
+      actions: []
+    - text: "T\u1EA1m bi\u1EC7t."
+      targetNodeId: 
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions: []
+    nextNodeId: 
+  - id: help_refuse
+    speaker: 
+    text: "Gi\xFAp ng\u01B0\u01A1i? Ta c\xF2n ch\u1EB3ng bi\u1EBFt ng\u01B0\u01A1i l\xE0 ai..."
+    onEnter: []
+    choices: []
+    nextNodeId: calm_menu
+  - id: kitchen_hint
+    speaker: 
+    text: "M\u1ED9t h\u1ED3n ma \u0111i l\u1EA1i gi\u1EEFa b\u1EBFp v\xE0 ph\xF2ng kh\xE1ch. \u0110\u1EE3i n\xF3 quay l\u01B0ng... r\u1ED3i h\xE3y l\u1EA5y."
+    onEnter: []
+    choices: []
+    nextNodeId: calm_menu
+  - id: ivan_friend
+    speaker: 
+    text: "Ivan... ng\u01B0\u1EDDi l\xE0m v\u01B0\u1EDDn t\u1ED1t b\u1EE5ng... \u0110\u01B0\u1EE3c, v\xEC \xF4ng \u1EA5y, ta s\u1EBD gi\xFAp ng\u01B0\u01A1i m\u1ED9t l\u1EA7n."
+    onEnter: []
+    choices: []
+    nextNodeId: help_choice
+  - id: help_choice
+    speaker: 
+    text: "Ta c\xF3 th\u1EC3 l\xE0m m\u1ED9t trong ba vi\u1EC7c. Ch\u1ECDn \u0111i:"
+    onEnter: []
+    choices:
+    - text: "L\xE0m l\u0169 ma ch\u1EADm l\u1EA1i."
+      targetNodeId: slow
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions:
+      - type: 3
+        key: 
+        value: 0.4
+        duration: 40
+      - type: 0
+        key: whisper_helped
+        value: 1
+        duration: 0
+    - text: "M\u1EDF c\xE1nh c\u1EEDa \u0111\u1ECF gi\xFAp t\xF4i."
+      targetNodeId: open
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions:
+      - type: 5
+        key: keyRed
+        value: 1
+        duration: 0
+      - type: 0
+        key: whisper_helped
+        value: 1
+        duration: 0
+    - text: "Cho t\xF4i s\u1EE9c m\u1EA1nh c\u1EE7a \xE1nh s\xE1ng."
+      targetNodeId: energy
+      conditions: []
+      showWhenLocked: 1
+      lockedHint: 
+      actions:
+      - type: 10
+        key: 
+        value: 100
+        duration: 0
+      - type: 8
+        key: 
+        value: 1
+        duration: 0
+      - type: 0
+        key: whisper_helped
+        value: 1
+        duration: 0
+    nextNodeId: 
+  - id: slow
+    speaker: 
+    text: "Ta s\u1EBD h\xE1t m\u1ED9t kh\xFAc ru cho ch\xFAng... \u0110i nhanh l\xEAn, ph\xE9p n\xE0y kh\xF4ng k\xE9o d\xE0i l\xE2u \u0111\xE2u!"
+    onEnter: []
+    choices: []
+    nextNodeId: 
+  - id: open
+    speaker: 
+    text: "C\xE1nh c\u1EEDa \u0111\u1ECF \u0111\xE3 m\u1EDF. Ch\xFAc ng\u01B0\u01A1i may m\u1EAFn, k\u1EBB s\u1ED1ng..."
+    onEnter: []
+    choices: []
+    nextNodeId: 
+  - id: energy
+    speaker: 
+    text: "H\xE3y nh\u1EADn l\u1EA5y \xE1nh s\xE1ng c\u1EE7a ta... v\xE0 m\u1ED9t ch\xFAt sinh l\u1EF1c."
+    onEnter: []
+    choices: []
+    nextNodeId: 
+  - id: angry
+    speaker: 
+    text: "NG\u01AF\u01A0I D\xC1M?! H\u1EE0I C\xC1C ANH EM, C\xD3 K\u1EBA \u0110\u1ED8T NH\u1EACP!!!"
+    onEnter:
+    - type: 4
+      key: 
+      value: 1
+      duration: 0
+    choices: []
+    nextNodeId: 
+  - id: after_help
+    speaker: 
+    text: "Ta \u0111\xE3 gi\xFAp ng\u01B0\u01A1i r\u1ED3i. \u0110i \u0111i, tr\u01B0\u1EDBc khi tr\u1EDDi s\xE1ng..."
+    onEnter: []
+    choices: []
+    nextNodeId: 
