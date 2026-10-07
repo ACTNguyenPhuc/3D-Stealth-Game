@@ -15,6 +15,8 @@ namespace StealthGame
         public int Potions { get; private set; }
         public int Shards { get; private set; }
         public int RelicCount => m_Relics.Count;
+        /// <summary>Số bình máu để hiển thị ("∞" ở chế độ Tập sự).</summary>
+        public string PotionsLabel => DifficultyProfile.Current.infinitePotions ? "∞" : Potions.ToString();
         public IReadOnlyCollection<string> Keys => m_Keys;
         public IReadOnlyCollection<string> Relics => m_Relics;
 

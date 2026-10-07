@@ -100,7 +100,7 @@ namespace StealthGame
             var panel = UIBuild.Panel("DifficultyPanel", m_Difficulty, 24, 32);
             panel.style.alignItems = Align.Center;
             UIBuild.Heading("CHỌN ĐỘ KHÓ", panel);
-            foreach (Difficulty d in System.Enum.GetValues(typeof(Difficulty)))
+            foreach (Difficulty d in DifficultyProfile.MenuOrder)
             {
                 var p = DifficultyProfile.Get(d);
                 var difficulty = d;

@@ -74,7 +74,9 @@ namespace StealthGame
             if (IsExhausted && Stamina >= maxStamina * 0.3f)
                 IsExhausted = false;
 
-            if (Energy < passiveRegenCap)
+            if (DifficultyProfile.Current.infiniteEnergy)
+                Energy = maxEnergy;
+            else if (Energy < passiveRegenCap)
                 Energy = Mathf.Min(passiveRegenCap, Energy + passiveEnergyRegen * Time.deltaTime);
         }
 
@@ -98,12 +100,16 @@ namespace StealthGame
 
         public bool TryUseEnergy(float amount)
         {
+            if (DifficultyProfile.Current.infiniteEnergy) return true;
             if (Energy < amount) return false;
             Energy -= amount;
             return true;
         }
 
-        public void DrainEnergy(float amount) => Energy = Mathf.Max(0f, Energy - amount);
+        public void DrainEnergy(float amount)
+        {
+            if (!DifficultyProfile.Current.infiniteEnergy) Energy = Mathf.Max(0f, Energy - amount);
+        }
         public void AddEnergy(float amount) => Energy = Mathf.Min(maxEnergy, Energy + amount);
 
         // ------------------------------------------------------------------ Máu
@@ -118,7 +124,8 @@ namespace StealthGame
 
         public bool UsePotion()
         {
-            if (m_Inventory == null || m_Inventory.Potions <= 0)
+            bool infinite = DifficultyProfile.Current.infinitePotions;
+            if (!infinite && (m_Inventory == null || m_Inventory.Potions <= 0))
             {
                 GameEvents.RaiseToast("Không còn bình máu.");
                 AudioManager.Sfx(SoundId.EnergyEmpty);
@@ -129,7 +136,7 @@ namespace StealthGame
                 GameEvents.RaiseToast("Máu đã đầy.");
                 return false;
             }
-            m_Inventory.UsePotion();
+            if (!infinite) m_Inventory.UsePotion();
             Heal(potionHeal);
             AudioManager.Sfx(SoundId.Potion);
             GameEvents.RaiseToast($"+{potionHeal:0} máu");

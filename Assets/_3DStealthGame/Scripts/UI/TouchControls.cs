@@ -302,7 +302,7 @@ namespace StealthGame
                 bool canUse = interactor != null && interactor.Current != null;
                 m_InteractButton.style.opacity = canUse ? 1f : 0.35f;
                 var inv = player.GetComponent<PlayerInventory>();
-                if (inv != null) m_PotionCount.text = inv.Potions.ToString();
+                if (inv != null) m_PotionCount.text = inv.PotionsLabel;
                 var move = player.GetComponent<PlayerMovement>();
                 m_CrouchButton.style.backgroundColor = move != null && move.IsCrouching
                     ? new Color(0.2f, 0.4f, 0.6f, 0.75f) : new Color(0.05f, 0.05f, 0.1f, 0.55f);

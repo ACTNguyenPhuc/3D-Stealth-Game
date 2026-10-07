@@ -5,7 +5,8 @@ using UnityEngine.Rendering.Universal;
 
 namespace StealthGame
 {
-    public enum Difficulty { Easy = 0, Normal = 1, Hard = 2 }
+    /// <summary>Trainee (Tập sự) dùng giá trị 3 để không làm hỏng file lưu cũ.</summary>
+    public enum Difficulty { Easy = 0, Normal = 1, Hard = 2, Trainee = 3 }
 
     /// <summary>Bảng cân bằng theo độ khó – mọi con số chỉnh độ khó tập trung tại đây.</summary>
     public readonly struct DifficultyProfile
@@ -19,15 +20,25 @@ namespace StealthGame
         public readonly float dawnMinutes;
         public readonly int startPotions;
         public readonly float scoreMultiplier;
+        public readonly bool infiniteEnergy;    // Linh Quang / đèn soi không tốn năng lượng
+        public readonly bool infinitePotions;   // bình máu dùng không giới hạn
 
-        public DifficultyProfile(string name, string desc, float dmg, float speed, float vision, float detect, float minutes, int potions, float score)
+        public DifficultyProfile(string name, string desc, float dmg, float speed, float vision, float detect, float minutes, int potions, float score,
+            bool infiniteEnergy = false, bool infinitePotions = false)
         {
             displayName = name; description = desc; enemyDamage = dmg; enemySpeed = speed; enemyVision = vision;
             detectionRate = detect; dawnMinutes = minutes; startPotions = potions; scoreMultiplier = score;
+            this.infiniteEnergy = infiniteEnergy; this.infinitePotions = infinitePotions;
         }
+
+        /// <summary>Thứ tự hiển thị trong menu chọn độ khó.</summary>
+        public static readonly Difficulty[] MenuOrder = { Difficulty.Trainee, Difficulty.Easy, Difficulty.Normal, Difficulty.Hard };
+
+        public static DifficultyProfile Current => Get(GameSession.CurrentDifficulty);
 
         public static DifficultyProfile Get(Difficulty d) => d switch
         {
+            Difficulty.Trainee => new DifficultyProfile("Tập sự", "Chế độ trình diễn: vô hạn Linh Quang, vô hạn bình máu. 30 phút.", 0.5f, 0.85f, 0.8f, 0.6f, 30f, 0, 0.5f, true, true),
             Difficulty.Easy => new DifficultyProfile("Dễ", "Ma chậm, gây ít sát thương. 20 phút trước bình minh.", 0.6f, 0.85f, 0.8f, 0.7f, 20f, 3, 0.75f),
             Difficulty.Hard => new DifficultyProfile("Khó", "Ma nhanh, nhìn xa, đánh đau. Chỉ 10 phút.", 1.5f, 1.15f, 1.2f, 1.4f, 10f, 0, 1.5f),
             _ => new DifficultyProfile("Thường", "Trải nghiệm cân bằng. 15 phút trước bình minh.", 1f, 1f, 1f, 1f, 15f, 1, 1f),

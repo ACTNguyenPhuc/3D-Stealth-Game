@@ -210,7 +210,7 @@ namespace StealthGame
                 m_KeyBlue.style.display = m_Inventory.HasKey("keyBlue") ? DisplayStyle.Flex : DisplayStyle.None;
                 m_KeyRed.style.display = m_Inventory.HasKey("keyRed") ? DisplayStyle.Flex : DisplayStyle.None;
                 m_Shards.text = m_Inventory.Shards.ToString();
-                m_Potions.text = TouchInput.Enabled ? m_Inventory.Potions.ToString() : $"{m_Inventory.Potions} (H)";
+                m_Potions.text = TouchInput.Enabled ? m_Inventory.PotionsLabel : $"{m_Inventory.PotionsLabel} (H)";
             }
 
             UpdateObjectives();

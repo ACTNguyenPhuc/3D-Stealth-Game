@@ -110,7 +110,7 @@ namespace StealthGame
             {
                 Item(t.relic, t.gold, $"Mảnh hồn: {inv.RelicCount}/{PlayerInventory.RelicsRequired}", "Đủ 3 mảnh để phá phong ấn cửa chính.");
                 Item(t.shard, new Color(0.5f, 0.9f, 1f), $"Mảnh vụn linh hồn: {inv.Shards}", "Tiền tệ – đổi đồ với Ivan. Cũng cộng điểm.");
-                Item(t.potion, new Color(1f, 0.4f, 0.45f), $"Bình máu: {inv.Potions}", $"Nhấn H để hồi {player.potionHeal:0} máu.");
+                Item(t.potion, new Color(1f, 0.4f, 0.45f), $"Bình máu: {inv.PotionsLabel}", $"Nhấn H để hồi {player.potionHeal:0} máu.");
                 Item(t.lantern, t.energyColor, $"Năng lượng đèn: {player.Energy:0}/{player.maxEnergy:0}", "Linh Quang tốn 25. Nhặt dầu đèn (vàng) để nạp.");
                 if (inv.HasKey("keyRed")) Item(t.key, new Color(1f, 0.3f, 0.3f), "Chìa khóa đỏ", "Mở Phong ấn Đỏ và cửa đỏ.");
                 if (inv.HasKey("keyBlue")) Item(t.key, new Color(0.3f, 0.6f, 1f), "Chìa khóa xanh", "Mở Phong ấn Xanh và cửa xanh.");
